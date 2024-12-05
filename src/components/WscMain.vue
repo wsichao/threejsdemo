@@ -114,7 +114,7 @@ export default {
 
       this.$refs['bodyMain'].appendChild(renderer.domElement);
       
-      let url = '/public/25s.jpg';
+      let url = '/25s.jpg';
       let envTexture = new THREE.TextureLoader().load(url);
       envTexture.mapping = THREE.EquirectangularReflectionMapping;
       scene.background = envTexture;
@@ -122,7 +122,7 @@ export default {
       
 
       // const rgbeload = new RGBELoader()
-      // rgbeload.load('/public/HDRMAP.hdr', hdr => {
+      // rgbeload.load('/HDRMAP.hdr', hdr => {
       //   hdr.mapping = THREE.EquirectangularReflectionMapping;
       //   scene.background = hdr;
       //   scene.environment = hdr
@@ -142,7 +142,7 @@ export default {
       light4.position.set(1,1,-1)
       scene.add(light4)
       gltfloader = new GLTFLoader()
-      gltfloader.load('/public/fj.gltf', e => {
+      gltfloader.load('/fj.gltf', e => {
         let model = e.scene
         model.scale.set(0.2,0.2,0.2)
         model.rotateY(0.2)
@@ -165,7 +165,7 @@ export default {
         })
         scene.add(model)
       })
-      gltfloader.load('/public/as/carred1.gltf', e => {
+      gltfloader.load('/as/carred1.gltf', e => {
         let model = e.scene
         model.rotateY(0.2)
         model.rotateX(-0.2)
@@ -188,7 +188,7 @@ export default {
         })
         scene.add(model)
       })
-      gltfloader.load('/public/lc.gltf', e => {
+      gltfloader.load('/lc.gltf', e => {
         let model = e.scene
         model.scale.set(0.1,0.1,0.1)
         model.rotateY(0.2)
@@ -243,7 +243,7 @@ export default {
       dracoLoader.setDecoderPath("/draco/gltf/");
       dracoLoader.setDecoderConfig({ type: "js" });
       gltfloader.setDRACOLoader(dracoLoader);
-      gltfloader.load("/public/moon.glb", gltf => {
+      gltfloader.load("/moon.glb", gltf => {
         let moon = gltf.scene.children[0]
         for (let j = 0; j < 10; j++) {
           let moonInstance = new THREE.InstancedMesh( // 实例化mesh
